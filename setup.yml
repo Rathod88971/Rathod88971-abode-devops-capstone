@@ -1,0 +1,42 @@
+---
+- name: Configure DevOps servers
+  hosts: agents
+  become: true
+
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Git
+      apt:
+        name: git
+        state: present
+
+    - name: Install Python
+      apt:
+        name: python3
+        state: present
+
+    - name: Install Java 21
+      apt:
+        name: openjdk-21-jdk
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Add ubuntu user to Docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: true

@@ -1,0 +1,9 @@
+[agents]
+TEST_PRIVATE_IP   ansible_user=ubuntu
+PROD_PRIVATE_IP   ansible_user=ubuntu
+
+[test]
+TEST_PRIVATE_IP
+
+[prod]
+PROD_PRIVATE_IP
