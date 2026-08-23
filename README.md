@@ -190,4 +190,4 @@ Or visit `http://<PRODUCTION_PUBLIC_IP>` in a browser.
 
 ## Author
 
-Sachin Rathod
+Rathod Rahul
